@@ -1,9 +1,13 @@
 extends CharacterBody2D
 
 @export var animacion: AnimatedSprite2D
+@export var area_2d: Area2D
 
 var _velocidad: float = 100.0
 var _velocidad_salto: float = -300.0
+
+func _ready():
+	area_2d.body_entered.connect(_on_area_2d_body_entered)
 
 func _physics_process(delta: float):
 	animacion.play("correr")
@@ -12,14 +16,14 @@ func _physics_process(delta: float):
 	velocity += get_gravity() * delta
 	
 	# salto
-	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
+	if Input.is_action_just_pressed("saltar") and is_on_floor():
 		velocity.y = _velocidad_salto
 	
 	# movimiento lateral
-	if Input.is_action_pressed("ui_right"):
+	if Input.is_action_pressed("derecha"):
 		velocity.x = _velocidad
 		animacion.flip_h = true
-	elif Input.is_action_pressed("ui_left"):
+	elif Input.is_action_pressed("izquierda"):
 		velocity.x = -_velocidad
 		animacion.flip_h = false
 	else:
@@ -37,3 +41,7 @@ func _physics_process(delta: float):
 	move_and_slide()
 	
 	
+
+
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	print("muerto")
