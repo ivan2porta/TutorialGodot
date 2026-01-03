@@ -2,6 +2,7 @@ extends Node
 
 signal muertes_actualizado
 
+var nivel: int
 var muertes: int
 
 func sumar_muerte():
