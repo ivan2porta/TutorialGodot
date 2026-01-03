@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://nk8qxh5ukg7p"]
+
+[ext_resource type="Script" uid="uid://djmxipyqathwy" path="res://escenas/moneda/moneda.gd" id="1_ypcej"]
+[ext_resource type="Texture2D" uid="uid://47o35pl1b7ou" path="res://sprites/tileset_mazmorra.png" id="2_ml8qm"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_y48gn"]
+radius = 8.062258
+
+[node name="Moneda" type="Node2D" node_paths=PackedStringArray("area_2d")]
+script = ExtResource("1_ypcej")
+area_2d = NodePath("Area2D")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_ml8qm")
+region_enabled = true
+region_rect = Rect2(48, 48, 16, 16)
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 8
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_y48gn")
