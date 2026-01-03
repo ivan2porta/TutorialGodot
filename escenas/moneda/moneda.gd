@@ -12,3 +12,4 @@ func _ready() -> void:
 func _recogida(_body):
 	contenedor_monedas.moneda_recogida()
 	queue_free()
+	
