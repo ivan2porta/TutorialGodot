@@ -57,6 +57,7 @@ region_rect = Rect2(48, 48, 16, 16)
 
 [node name="ReproductorSonidoMoneda" type="AudioStreamPlayer2D" parent="Sprite2D"]
 stream = ExtResource("3_ml8qm")
+bus = &"SFX"
 script = ExtResource("4_y48gn")
 
 [node name="Area2D" type="Area2D" parent="."]
