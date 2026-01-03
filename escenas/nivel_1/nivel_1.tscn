@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=4 uid="uid://bm7ynf8ht1xr8"]
+[gd_scene load_steps=7 format=4 uid="uid://bm7ynf8ht1xr8"]
 
 [ext_resource type="PackedScene" uid="uid://q18cexxip2j8" path="res://escenas/bordes/bordes.tscn" id="1_ahhdk"]
 [ext_resource type="TileSet" uid="uid://dnahkmnbclurl" path="res://tile_sets/mazmorra.tres" id="2_wpukg"]
 [ext_resource type="PackedScene" uid="uid://bdojqunsrvdi2" path="res://escenas/personaje/personaje.tscn" id="3_wpukg"]
 [ext_resource type="PackedScene" uid="uid://snssc17lc3o3" path="res://escenas/trampa/trampa.tscn" id="4_bfali"]
 [ext_resource type="PackedScene" uid="uid://nk8qxh5ukg7p" path="res://escenas/moneda/moneda.tscn" id="5_dn0x7"]
+[ext_resource type="PackedScene" uid="uid://dmacu6kbko37e" path="res://escenas/contenedor_monedas/contenedor_monedas.tscn" id="5_tifen"]
 
 [node name="Nivel1" type="Node2D"]
 
@@ -24,11 +25,13 @@ position = Vector2(-169, 104)
 [node name="Trampa" parent="." instance=ExtResource("4_bfali")]
 position = Vector2(-119, 8)
 
-[node name="Moneda" parent="." instance=ExtResource("5_dn0x7")]
+[node name="Node" parent="." instance=ExtResource("5_tifen")]
+
+[node name="Moneda1" parent="Node" instance=ExtResource("5_dn0x7")]
 position = Vector2(-119, 43)
 
-[node name="Moneda2" parent="." instance=ExtResource("5_dn0x7")]
+[node name="Moneda2" parent="Node" instance=ExtResource("5_dn0x7")]
 position = Vector2(-40, 30)
 
-[node name="Moneda3" parent="." instance=ExtResource("5_dn0x7")]
+[node name="Moneda3" parent="Node" instance=ExtResource("5_dn0x7")]
 position = Vector2(163, -16)
