@@ -1,0 +1,4 @@
+[gd_resource type="Theme" format=3 uid="uid://coyox4lcnl6bl"]
+
+[resource]
+Label/colors/font_shadow_color = Color(0, 0, 0, 0.61960787)
