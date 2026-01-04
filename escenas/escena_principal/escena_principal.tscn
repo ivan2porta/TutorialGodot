@@ -26,8 +26,8 @@ bus = &"Musica"
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="ContadorMuertes" parent="CanvasLayer" instance=ExtResource("6_y7kll")]
-anchors_preset = 0
-anchor_right = 0.0
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
 anchor_bottom = 0.0
-grow_horizontal = 1
 grow_vertical = 1
